@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>car_race | Baiqi Lu</title>
+    <link>https://example.com/tag/car_race/</link>
+      <atom:link href="https://example.com/tag/car_race/index.xml" rel="self" type="application/rss+xml" />
+    <description>car_race</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://example.com/media/icon_hua57eaf4db13698c13edae1643762a364_16471_512x512_fill_lanczos_center_3.png</url>
+      <title>car_race</title>
+      <link>https://example.com/tag/car_race/</link>
+    </image>
+    
+    <item>
+      <title>Car Race Project</title>
+      <link>https://example.com/project/carrace/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/carrace/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Updating&amp;hellip;&amp;hellip;&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
