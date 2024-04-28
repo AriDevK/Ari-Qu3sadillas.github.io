@@ -20,7 +20,7 @@ jobs:
       run: ls && pwd
 
     - name: Change base-tag in index.html from / to Base URL
-      run: sed -i 's/<base href="\/" \/>/<base href="\/aridevk.github.io\/" \/>/g' Profile/bin/Release/net8.0/publish/wwwroot/index.html
+      run: sed -i 's/<base href="\/" \/>/<base href="\/Ari-Qu3sadillas.github.io\/" \/>/g' Profile/bin/Release/net8.0/publish/wwwroot/index.html
 
     - name: Copy index to 404
       run: cp Profile/bin/Release/net8.0/publish/wwwroot/index.html Profile/bin/Release/net8.0/publish/wwwroot/404.html
