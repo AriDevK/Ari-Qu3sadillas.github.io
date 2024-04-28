@@ -1,0 +1,44 @@
+@inject IDialogService DialogService
+
+<MudCard>
+    <div class="project-card-img-container">
+        <section class="project-card-overlay"></section>
+        <MudCardMedia Image="@Project.Banner" Height="200"/>
+        <div class="project-card-button-container">
+            <MudGrid Class="" Justify="Justify.Center">
+                <MudItem xs="12">
+                    <section class="project-card-button">
+                        <MudButton StartIcon="@Icons.Custom.Brands.GitHub" Href="@Project.Repository" Target="_blank" Color="Color.Primary" Variant="Variant.Filled">GitHub</MudButton>
+                    </section>
+                </MudItem>
+                <MudItem xs="12">
+                    <section class="project-card-button">
+                        <MudButton StartIcon="@Icons.Material.Filled.Info" OnClick="ShowDialog" Color="Color.Primary" Variant="Variant.Filled">Details</MudButton>
+                    </section>
+                </MudItem>
+            </MudGrid>
+        </div>
+    </div>
+    <MudCardContent>
+        <MudText Typo="Typo.h5">@Project.Name</MudText>
+        <blockquote class="project-card-description mb-2">
+            <MudText Typo="Typo.body2">@Project.Description</MudText>
+        </blockquote>
+        <MudText Typo="Typo.caption">Technologies</MudText><br>
+        @foreach (var badge in Project.TechBadges!)
+        {
+            <img src="@badge" alt="">
+        }
+    </MudCardContent>
+</MudCard>
+
+@code {
+    [Parameter, EditorRequired] public required Project Project { get; set; }
+
+    private void ShowDialog()
+    {
+        var parameters = new DialogParameters<ProjectDialog> { { "Project", Project } };
+        DialogService.Show<ProjectDialog>(Project.Name, parameters);
+    }
+
+}

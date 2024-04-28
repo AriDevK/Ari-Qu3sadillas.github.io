@@ -1,0 +1,49 @@
+@page "/links"
+@inject HttpClient Http
+
+<HeadTitle Title="Links"/>
+
+<MudContainer MaxWidth="MaxWidth.Small">
+    <MudGrid Style="text-align: center">
+        <MudItem xs="12">
+            <MudImage Src="images/ari.jpeg" Alt="Ari avatar" Elevation="1" Class="rounded-circle avatar" Width="150"/>
+        </MudItem>
+        <MudItem xs="12">
+            <MudText Typo="Typo.h4" Color="Color.Primary">Ariadne Rangel</MudText>
+            <MudText Typo="Typo.subtitle1">𓆩♡𓆪 Web developer, Youtuber, Blogger and Magical Girl 𓆩♡𓆪</MudText>
+        </MudItem>
+
+        @if (_links != null)
+        {
+            foreach (var link in _links.Where(l => l.Active))
+            {
+                <MudItem xs="12">
+                    <SocialLink Link="link"/>
+                </MudItem>
+            }
+
+            <MudText Typo="Typo.h6" Class="mx-auto mt-3">Soon</MudText>
+
+            foreach (var link in _links.Where(l => !l.Active))
+            {
+                <MudItem xs="12">
+                    <SocialLink Link="link"/>
+                </MudItem>
+            }
+        }
+
+        <MudItem xs="12">
+            <MudText Typo="Typo.caption">Made with Blazor & ❤ by Ariadne Rangel</MudText>
+        </MudItem>
+    </MudGrid>
+</MudContainer>
+
+@code{
+    private Link[]? _links = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        _links = await Http.GetFromJsonAsync<Link[]>("data/links.json");
+        StateHasChanged();
+    }
+}

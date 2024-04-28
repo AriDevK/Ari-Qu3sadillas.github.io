@@ -1,0 +1,33 @@
+<MudDialog>
+    <DialogContent>
+        <MudGrid>
+            <MudItem xs="6">
+                <MudCarousel Class="mud-width-full" ItemsSource="@_source" Style="height:300px;" ShowBullets="false" EnableSwipeGesture="true">
+                    <ItemTemplate>
+                        <img alt="@Project.Name" src="@context" style="height:100%; width:100%; object-fit:cover;"/>
+                    </ItemTemplate>
+                </MudCarousel>
+            </MudItem>
+            <MudItem xs="6">
+                <MudText Typo="Typo.h4">@Project.Name</MudText>
+                <MudDivider/>
+                <MudText Typo="Typo.body1" Class="mt-4">
+                    @Project.Description
+                </MudText>
+                <MudButton Style="bottom: 0; position: absolute" Color="Color.Dark" Variant="Variant.Filled" Href="@Project.Repository" Target="_blank" StartIcon="@Icons.Custom.Brands.GitHub">Check Repository</MudButton>
+            </MudItem>
+        </MudGrid>
+    </DialogContent>
+    <DialogActions></DialogActions>
+</MudDialog>
+
+@code {
+    [Parameter, EditorRequired] public required Project Project { get; set; }
+    private IList<string> _source = new List<string>();
+
+    protected override void OnInitialized()
+    {
+        if (Project.Images != null) _source = Project.Images.ToList();
+    }
+
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "GitHub",
+    "url": "https://www.github.com/AriDevK",
+    "icon": "GitHub",
+    "active": true
+  },
+  {
+    "name": "Instagram",
+    "url": "https://www.instagram.com/ariadne.kangel/",
+    "icon": "Instagram",
+    "active": true
+  },
+  {
+    "name": "Medium",
+    "url": "https://medium.com/@AriDev",
+    "icon": "FileDocument",
+    "active": true
+  },
+  {
+    "name": "YouTube",
+    "url": "",
+    "icon": "YouTube",
+    "active": false
+  },
+  {
+    "name": "Twitter",
+    "url": "",
+    "icon": "X",
+    "active": false
+  }
+]

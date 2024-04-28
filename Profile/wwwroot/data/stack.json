@@ -1,0 +1,137 @@
+[
+  {
+    "name": "C#",
+    "icon": "csharp-plain",
+    "type": "Language"
+  },
+  {
+    "name": "Visual Basic",
+    "icon": "visualbasic-plain",
+    "type": "Language"
+  },
+  {
+    "name": "Python",
+    "icon": "python-plain",
+    "type": "Language"
+  },
+  {
+    "name": "Go",
+    "icon": "go-original-wordmark",
+    "type": "Language"
+  },
+  {
+    "name": "PHP",
+    "icon": "php-plain",
+    "type": "Language"
+  },
+  {
+    "name": "PowerShell",
+    "icon": "powershell-plain",
+    "type": "Language"
+  },
+  {
+    "name": "HTML",
+    "icon": "html5-plain",
+    "type": "Language"
+  },
+  {
+    "name": "CSS",
+    "icon": "css3-plain",
+    "type": "Language"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "javascript-plain",
+    "type": "Language"
+  },
+  {
+    "name": "typeScript",
+    "icon": "typescript-plain",
+    "type": "Language"
+  },
+  {
+    "name": "SQL",
+    "icon": "azuresqldatabase-plain",
+    "type": "Language"
+  },
+  {
+    "name": "Dot Net Framework",
+    "icon": "dot-net-plain-wordmark",
+    "type": "Framework"
+  },
+  {
+    "name": "Dot Net Core",
+    "icon": "dotnetcore-plain",
+    "type": "Framework"
+  },
+  {
+    "name": "Blazor",
+    "icon": "blazor-original",
+    "type": "Framework"
+  },
+  {
+    "name": "Angular",
+    "icon": "angularjs-plain",
+    "type": "Framework"
+  },
+  {
+    "name": "Xamarin",
+    "icon": "xamarin-original",
+    "type": "Framework"
+  },
+  {
+    "name": "Flask",
+    "icon": "flask-original",
+    "type": "Framework"
+  },
+  {
+    "name": "SQL Server",
+    "icon": "microsoftsqlserver-plain",
+    "type": "Framework"
+  },
+  {
+    "name": "MySQL",
+    "icon": "mysql-original",
+    "type": "Framework"
+  },
+  {
+    "name": "PostgreSQL",
+    "icon": "postgresql-plain",
+    "type": "Framework"
+  },
+  {
+    "name": "SQLite",
+    "icon": "sqlite-plain",
+    "type": "Framework"
+  },
+  {
+    "name": "MongoDB",
+    "icon": "mongodb-plain-wordmark",
+    "type": "Framework"
+  },
+  {
+    "name": "Redis",
+    "icon": "redis-plain",
+    "type": "Framework"
+  },
+  {
+    "name": "SASS",
+    "icon": "sass-original",
+    "type": "Framework"
+  },
+  {
+    "name": "Azure",
+    "icon": "azure-plain",
+    "type": "Framework"
+  },
+  {
+    "name": "Docker",
+    "icon": "docker-plain",
+    "type": "Framework"
+  },
+  {
+    "name": "Git",
+    "icon": "git-plain",
+    "type": "Framework"
+  }
+]

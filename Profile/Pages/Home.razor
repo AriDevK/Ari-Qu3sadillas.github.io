@@ -1,0 +1,135 @@
+﻿@page "/"
+@inject IJSRuntime JsRuntime
+@inject HttpClient Http
+
+<HeadTitle Title="Home"/>
+
+<MudGrid>
+    <MudItem xs="12" md="8" Class="profile-data">
+        <MudTooltip Text="that's me >:3">
+            <MudImage Src="images/ari4.jpeg" Alt="Ari avatar" Elevation="1" Class="profile-pic-header avatar rounded-circle" Width="300"/>
+        </MudTooltip>
+
+        <MudText Typo="Typo.h3" Color="Color.Default">Ariadne Rangel</MudText>
+        <p id="profile-job" class="d-inline-block" style="font-style: italic"></p>
+        <br><br>
+        <MudText Typo="Typo.body1" Class="profile-description">
+            Hello it's me Ari, I'm 22 yo software engineer focused at backend and desktop with interest on design patterns, clean architectures and learn new technologies.
+        </MudText>
+        <br>
+        <MudText Typo="Typo.body1" Class="profile-description">
+            Mainly I work using C#, Python and some .NET Tools/Frameworks but sometimes I code on some different things like Golang, Powershell, PHP or even in some embedded devices like Arduino, RaspberryPI or ESP32.
+        </MudText>
+    </MudItem>
+    <MudItem xs="12" md="4" Style="text-align: center">
+        <MudTooltip Text="that's me >:3" Class="profile-pic-footer">
+            <MudImage Src="images/ari4.jpeg" Alt="Ari avatar" Elevation="1" Class="profile-pic-footer avatar rounded-circle mx-auto" Width="300"/>
+        </MudTooltip>
+    </MudItem>
+</MudGrid>
+<br><br>
+
+<MudCard Elevation="0">
+    <MudCardHeader>
+        <MudText Typo="Typo.h4" Class="mx-auto">Languages</MudText>
+    </MudCardHeader>
+    <MudCardContent Class="pt-0" Style="text-align: center">
+        @if (_languages != null)
+        {
+            foreach (var lang in _languages)
+            {
+                <TechIcon Icon="@lang.Icon" Tooltip="@lang.Name"/>
+            }
+        }
+        else
+        {
+            <MudProgressCircular Color="Color.Primary" Indeterminate="true"/>
+        }
+    </MudCardContent>
+</MudCard>
+<br>
+<MudCard Elevation="0">
+    <MudCardHeader>
+        <MudText Typo="Typo.h4" Class="mx-auto"> Frameworks & Tools</MudText>
+    </MudCardHeader>
+    <MudCardContent Class="pt-0" Style="text-align: center">
+        @if (_frameworks != null)
+        {
+            foreach (var framework in _frameworks)
+            {
+                <TechIcon Icon="@framework.Icon" Tooltip="@framework.Name"/>
+            }
+        }
+        else
+        {
+            <MudProgressCircular Color="Color.Primary" Indeterminate="true"/>
+        }
+    </MudCardContent>
+</MudCard>
+
+<style>
+    .profile-description{
+        text-wrap: balance;
+    }
+    
+    
+/* media query for mobile devices */
+    @@media(max-width: 959px) {
+        .profile-pic-header {
+            display: block;
+        }
+        
+        .profile-pic-footer {
+            display: none;
+        }
+        
+        .profile-data{
+            text-align: center;
+        }
+    }
+    
+    /* media query for desktop devices */
+    @@media(min-width: 960px) {
+        .profile-pic-header {
+            display: none;
+         }
+         
+         .profile-pic-footer {
+            display: block;
+         }
+    }
+</style>
+
+@code{
+    [CascadingParameter(Name = "IsDarkMode")]
+    public bool IsDark { get; set; }
+
+    private Stack[]? _languages;
+    private Stack[]? _frameworks;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var techStack = await Http.GetFromJsonAsync<Stack[]>("data/stack.json");
+        if (techStack != null)
+        {
+            _languages = techStack.Where(t => t.Type == "Language").ToArray();
+            _frameworks = techStack.Where(t => t.Type == "Framework").ToArray();
+        }
+
+        StateHasChanged();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JsRuntime.InvokeVoidAsync("animate");
+        }
+    }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        StateHasChanged();
+    }
+}

@@ -1,0 +1,71 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+<MudThemeProvider @ref="@_mudThemeProvider" @bind-IsDarkMode="_isDark" Theme="_customTheme"/>
+<MudDialogProvider
+    FullWidth="true"
+    MaxWidth="MaxWidth.Medium"
+    CloseButton="true"
+    Position="DialogPosition.Center"
+    CloseOnEscapeKey="true"
+/>
+<MudSnackbarProvider />
+
+<NavMenu ActualPage="@_actualPath"/>
+<MudLayout>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.Medium">
+            <CascadingValue Value="_isDark" Name="IsDarkMode">
+                @Body
+            </CascadingValue>
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+<MudToggleIconButton @bind-Toggled="@_isDark" Class="dark-mode"
+                         Icon="@Icons.Material.Filled.LightMode" Title="Off"
+                                 ToggledIcon="@Icons.Material.Filled.DarkMode" ToggledTitle="On"/>
+
+<style>
+    .dark-mode {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 1000;
+    }
+</style>
+
+@code {
+    private bool _isDark;
+    private string _actualPath = string.Empty;
+    private MudThemeProvider? _mudThemeProvider;
+    private readonly MudTheme _customTheme = new()
+    {
+        Palette = new PaletteLight()
+        {
+            Background = "#eff1f5",
+            TextSecondary = Colors.Grey.Darken4
+        },
+        PaletteDark = new PaletteDark()
+        {
+            Background = "#303446",
+            TextSecondary = Colors.Grey.Lighten5,
+            Surface = "#414559"
+        }
+    };
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {        
+        NavigationManager.LocationChanged += HandleLocationChanged;
+
+        if (firstRender)
+        {
+            _isDark = await _mudThemeProvider!.GetSystemPreference();
+            StateHasChanged();
+        }
+    }
+    
+    private void HandleLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        _actualPath = NavigationManager.ToBaseRelativePath(e.Location);
+    }
+}

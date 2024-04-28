@@ -1,0 +1,25 @@
+/* media query for mobile devices */
+@media(max-width: 959px) {
+    .profile-pic-header {
+        display: block;
+    }
+
+    .profile-pic-footer {
+        display: none;
+    }
+
+    .profile-data{
+        text-align: center;
+    }
+}
+
+/* media query for desktop devices */
+@media(min-width: 960px) {
+    .profile-pic-header {
+        display: none;
+    }
+
+    .profile-pic-footer {
+        display: block;
+    }
+}

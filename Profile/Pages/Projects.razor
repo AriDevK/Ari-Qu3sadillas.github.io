@@ -1,0 +1,31 @@
+@page "/Projects"
+@inject HttpClient Http
+<HeadTitle Title="Projects"/>
+<MudText Typo="Typo.h4" Class="mb-5">Some of my Projects</MudText>
+
+<MudGrid>
+    @if (_projects is not null)
+    {
+        @foreach (var project in _projects)
+        {
+            <MudItem xs="12" sm="6">
+                <ProjectCard Project="project"/>
+            </MudItem>
+        }
+    }
+    else
+    {
+        <MudItem xs="12">
+            <MudAlert Severity="Severity.Info">Loading...</MudAlert>
+        </MudItem>
+    }
+</MudGrid>
+
+@code {
+    private Project[]? _projects;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _projects = await Http.GetFromJsonAsync<Project[]>("data/projects.json");
+    }
+}

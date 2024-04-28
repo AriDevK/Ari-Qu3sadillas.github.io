@@ -1,0 +1,13 @@
+<MudTooltip Text="@Tooltip">
+    <i class="devicon devicon-@Icon @ColorizeOnLightMode()"></i>
+</MudTooltip>
+
+@code {
+    [CascadingParameter(Name = "IsDarkMode")]
+    public bool IsDark { get; set; }
+    
+    [Parameter] public string? Tooltip { get; set; }
+    [Parameter, EditorRequired] public required string Icon { get; set; }
+    
+    private string ColorizeOnLightMode() => IsDark ? string.Empty : "colored";
+}

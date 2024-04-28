@@ -1,0 +1,67 @@
+[
+  {
+    "name": "🚀 Rocket PS",
+    "description": "A minimalist Backend framework for PowerShell, Rocket defines conventions for code structure, configuration, and interaction with the system. It is designed to be simple, easy to use, and flexible, allowing you to build powerful and efficient scripts with minimal effort.",
+    "banner": "https://raw.githubusercontent.com/AriDevK/Rocket-PS/main/screenshots/Banner.png",
+    "repository": "https://github.com/AriDevK/Rocket-PS/",
+    "techBadges" : [
+      "https://img.shields.io/badge/PowerShell-%235391FE.svg?style=for-the-badge&logo=powershell&logoColor=white"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/AriDevK/Rocket-PS/main/screenshots/Banner.png"
+    ]
+  },
+  {
+    "name": "🌳 LinkTree Clone",
+    "description": "A clone of the popular Linktree service for self use, allows you to create a simple and easy to use profile page with links to your social media accounts, websites, and other online profiles.",
+    "banner": "https://raw.githubusercontent.com/AriDevK/LinktreeProfile/main/screenshots/main.png",
+    "repository": "https://github.com/AriDevK/LinktreeProfile",
+    "techBadges" : [
+      "https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white",
+      "https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white",
+      "https://img.shields.io/badge/node-6DA55F?style=for-the-badge&logo=node.js&logoColor=white",
+      "https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"
+    ],
+    "images": [
+        "https://raw.githubusercontent.com/AriDevK/LinktreeProfile/main/screenshots/intro.gif",
+        "https://raw.githubusercontent.com/AriDevK/LinktreeProfile/main/screenshots/main.png",
+        "https://raw.githubusercontent.com/AriDevK/LinktreeProfile/main/screenshots/about.png"
+    ]
+  },
+  {
+    "name": "🍕 Pizza Store",
+    "description": "Online pizza store, this project is a web application that allows you to order pizza online, customize your order, and have it delivered to your door.",
+    "banner": "https://raw.githubusercontent.com/AriDevK/Pizza-Pizza-Store/main/screenshots/Home%20-%20No%20user.png",
+    "repository": "https://github.com/AriDevK/Pizza-Pizza-Store",
+    "techBadges" : [
+      "https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54",
+      "https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white",
+      "https://img.shields.io/badge/postgresql-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/AriDevK/Pizza-Pizza-Store/main/screenshots/pizzapizza-intro.gif",
+      "https://raw.githubusercontent.com/AriDevK/Pizza-Pizza-Store/main/screenshots/Home%20-%20No%20user.png",
+      "https://raw.githubusercontent.com/AriDevK/Pizza-Pizza-Store/main/screenshots/Sign%20Up.png",
+      "https://raw.githubusercontent.com/AriDevK/Pizza-Pizza-Store/main/screenshots/Log%20In.png",
+      "https://raw.githubusercontent.com/AriDevK/Pizza-Pizza-Store/main/screenshots/Cart%20Filled.png"
+    ]
+  },
+  {
+    "name": "🔒 Hash My Pass",
+    "description": "Web page that allows you to hash your passwords using different algorithms and salt",
+    "banner": "https://raw.githubusercontent.com/AriDevK/HashMyPass/master/assets/sc_home.jpeg",
+    "repository": "https://github.com/AriDevK/HashMyPass",
+    "techBadges" : [
+      "https://img.shields.io/badge/c%23-551DEF.svg?style=for-the-badge&logo=csharp&logoColor=white",
+      "https://img.shields.io/badge/blazor-%235C2D91.svg?style=for-the-badge&logo=blazor&logoColor=white",
+      "https://img.shields.io/badge/MudBlazor%20-DC336C?style=for-the-badge&logo=nuget",
+      "https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/AriDevK/HashMyPass/master/assets/preview.gif",
+      "https://raw.githubusercontent.com/AriDevK/HashMyPass/master/assets/sc_home.jpeg",
+      "https://raw.githubusercontent.com/AriDevK/HashMyPass/master/assets/sc_result.jpeg",
+      "https://raw.githubusercontent.com/AriDevK/HashMyPass/master/assets/sc_notfound.jpeg"
+    ]
+  }
+]

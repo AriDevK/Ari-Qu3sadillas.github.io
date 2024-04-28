@@ -1,0 +1,27 @@
+﻿<MudAppBar Color="Color.Transparent" Fixed="false" Dense="true" Elevation="0" >
+    <MudSpacer />
+    <div id="menu-actions">
+        <MudBreadcrumbs Items="_items"></MudBreadcrumbs>
+    </div>
+    <MudSpacer />
+</MudAppBar>
+
+@code{
+    [Parameter] public required string ActualPage { get; set; }
+    private List<BreadcrumbItem>? _items;
+
+    protected override void OnParametersSet()
+    {
+        _items = new List<BreadcrumbItem>
+        {
+            new BreadcrumbItem("About me", "/", icon: SetIcon("", ActualPage)),
+            new BreadcrumbItem("Projects", "/projects", icon: SetIcon("projects", ActualPage)),
+            new BreadcrumbItem("Links", "/links", icon: SetIcon("links", ActualPage))
+        };
+    }
+    
+    private static string SetIcon(string uri, string actualPage)
+    {
+        return uri == actualPage ? Icons.Custom.Uncategorized.FolderOpen : Icons.Custom.Uncategorized.Folder;
+    }
+}

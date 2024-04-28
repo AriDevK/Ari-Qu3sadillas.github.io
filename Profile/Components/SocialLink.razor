@@ -1,0 +1,29 @@
+@using System.Reflection
+@using Profile.Dto
+
+<MudButton Variant="Variant.Filled" StartIcon="@_value?.ToString()" Href="@Link.Url" Color="@(Link.Active? Color.Primary : Color.Secondary)" Disabled="!Link.Active" Target="_blank" FullWidth="true">@Link.Name</MudButton>
+
+@code {
+    [Parameter, EditorRequired] public required Link Link { get; set; }
+    private object? _value = null;
+
+    protected override void OnInitialized()
+    {
+        var brands = typeof(Icons.Custom.Brands).GetFields();
+        var files = typeof(Icons.Custom.FileFormats).GetFields();
+        var other = typeof(Icons.Custom.Uncategorized).GetFields();
+
+        if (brands.Any(f => f.Name == Link.Icon))
+        {
+            _value = brands.First(f => f.Name == Link.Icon).GetRawConstantValue();
+        }
+        else if (files.Any(f => f.Name == Link.Icon))
+        {
+            _value = files.First(f => f.Name == Link.Icon).GetRawConstantValue();
+        }
+        else if (other.Any(f => f.Name == Link.Icon))
+        {
+            _value = other.First(f => f.Name == Link.Icon).GetRawConstantValue();
+        }
+    }
+}

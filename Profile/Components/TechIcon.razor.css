@@ -1,0 +1,11 @@
+@media (max-width: 600px) {
+    .devicon {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .devicon {
+        font-size: 3rem;
+    }
+}
