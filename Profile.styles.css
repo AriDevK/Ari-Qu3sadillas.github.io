@@ -41,6 +41,17 @@
 .project-card-img-container:hover .project-card-button[b-hfq1j4kt5p] {
     opacity: 1 !important;
 }
+/* /Components/Redirect.razor.rz.scp.css */
+#ari-redirect[b-r7099zn2bf]{
+    mask-image: linear-gradient(
+        black 80%,
+        transparent
+    );
+}
+
+#redirect-content[b-r7099zn2bf] {
+    text-align: center;
+}
 /* /Components/TechIcon.razor.rz.scp.css */
 @media (max-width: 600px) {
     .devicon[b-giwu0cdxoz] {
