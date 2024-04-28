@@ -14,7 +14,7 @@ jobs:
         dotnet-version: 8.0.100
 
     - name: Publish .NET Core Project
-      run: dotnet publush -c Release -o release --nologo
+      run: dotnet publish -c Release -o release --nologo
 
     - name: Change base-tag in index.html from / to Base URL
       run: sed -i 's/<base href="\/" \/>/<base href="\/Ari-Qu3sadillas\/" \/>g' release/wwwwroot/index.html
