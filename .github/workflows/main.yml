@@ -14,16 +14,16 @@ jobs:
         dotnet-version: 8.0.100
 
     - name: Publish .NET Core Project
-      run: dotnet publish -c Release -o release --nologo
+      run: dotnet publish -c Release --nologo
 
     - name: Change base-tag in index.html from / to Base URL
-      run: sed -i 's/<base href="\/" \/>/<base href="\/Ari-Qu3sadillas\/" \/>/g' release/wwwwroot/index.html
+      run: sed -i 's/<base href="\/" \/>/<base href="\/Ari-Qu3sadillas\/" \/>/g' Profile/bin/Release/net8.0/wwwroot/index.html
 
     - name: Copy index to 404
-      run: cp release/wwwroot/index.html release/wwwroot/404.html
+      run: cp release/wwwroot/index.html Profile/bin/Release/net8.0/wwwroot/404.html
 
     - name: Add .nojekyll file
-      run: touch release/wwwroot/.nojekyll
+      run: touch Profile/bin/Release/net8.0/wwwroot/.nojekyll
 
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
