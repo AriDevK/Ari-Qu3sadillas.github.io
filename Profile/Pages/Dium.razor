@@ -1,8 +1,12 @@
 @page "/Dium"
 @inject NavigationManager NavigationManager
+
+<Redirect PageName="Medium blog"></Redirect>
+
 @code {
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
+        await Task.Delay(3000);
         NavigationManager.NavigateTo("https://medium.com/@AriDev");
     }
 }

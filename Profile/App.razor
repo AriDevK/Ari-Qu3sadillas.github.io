@@ -4,9 +4,19 @@
         <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
     </Found>
     <NotFound>
-        <PageTitle>Not found</PageTitle>
+        <HeadTitle Title="Not Found"/>
         <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
+            <div style="text-align: center">
+                <img id="not_found" src="images/ari_molly_eat_homework.png" alt="not found" width="40%"/>
+                <MudText Color="Color.Primary" Typo="Typo.h1">404 Not Found</MudText>
+                <p role="alert">
+                    Sorry, there's nothing at this address, Molly (the dog)
+                    probably ate it.
+                </p>
+                <p>
+                    Please check the URL and try again or go back to the <MudLink Href="/">home page</MudLink>.
+                </p>
+            </div>
         </LayoutView>
     </NotFound>
 </ViewTransitionRouter>

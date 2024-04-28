@@ -1,8 +1,12 @@
 @page "/GitHub"
 @inject NavigationManager NavigationManager
+
+<Redirect PageName="GitHub"></Redirect>
+
 @code {
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
+        await Task.Delay(3000);
         NavigationManager.NavigateTo("https://github.com/AriDevK");
     }
 }

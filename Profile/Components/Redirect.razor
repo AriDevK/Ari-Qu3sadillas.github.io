@@ -1,0 +1,9 @@
+<div id="redirect-content">
+    <MudText Typo="Typo.h2">You are being redirected to my @PageName!</MudText>
+    <img id="ari-redirect" src="images/ari-redirect.png" alt="redirecting" width="40%"/>
+    <MudText Typo="Typo.h6">See you later :3</MudText>
+</div>
+
+@code {
+    [Parameter, EditorRequired] public required string PageName { get; set; }
+}

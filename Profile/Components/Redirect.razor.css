@@ -1,0 +1,10 @@
+#ari-redirect{
+    mask-image: linear-gradient(
+        black 80%,
+        transparent
+    );
+}
+
+#redirect-content {
+    text-align: center;
+}
