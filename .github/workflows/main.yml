@@ -17,7 +17,7 @@ jobs:
       run: dotnet publish -c Release -o release --nologo
 
     - name: Change base-tag in index.html from / to Base URL
-      run: sed -i 's/<base href="\/" \/>/<base href="\/Ari-Qu3sadillas\/" \/>g' release/wwwwroot/index.html
+      run: sed -i 's/<base href="\/" \/>/<base href="\/Ari-Qu3sadillas\/" \/>/g' release/wwwwroot/index.html
 
     - name: Copy index to 404
       run: cp release/wwwroot/index.html release/wwwroot/404.html
