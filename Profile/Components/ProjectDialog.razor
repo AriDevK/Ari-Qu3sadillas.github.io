@@ -1,14 +1,14 @@
 <MudDialog>
     <DialogContent>
         <MudGrid>
-            <MudItem xs="6">
+            <MudItem xs="12" sm="6">
                 <MudCarousel Class="mud-width-full" ItemsSource="@_source" Style="height:300px;" ShowBullets="false" EnableSwipeGesture="true">
                     <ItemTemplate>
                         <img alt="@Project.Name" src="@context" style="height:100%; width:100%; object-fit:cover;"/>
                     </ItemTemplate>
                 </MudCarousel>
             </MudItem>
-            <MudItem xs="6">
+            <MudItem xs="12" sm="6">
                 <MudText Typo="Typo.h4">@Project.Name</MudText>
                 <MudDivider/>
                 <MudText Typo="Typo.body1" Class="mt-4">
