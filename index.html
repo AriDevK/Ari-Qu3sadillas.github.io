@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <base href="/Ari-Qu3sadillas/" />
+    <link rel="stylesheet" href="css/catppuccin.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" type='text/css' href="css/devicon.min.css" />
+<!--    <link rel="stylesheet" type='text/css' href="css/animate.min.css" />-->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="Profile.styles.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-bubbles@3.0.2/tsparticles.preset.bubbles.bundle.min.js"></script>
+</head>
+
+<body>
+    <script>
+        tsParticles.load({
+            id: "tsparticles",
+            options: {
+                preset: "bubbles",
+                duration: 0,
+                delay: 0,
+                background: {
+                    color: {
+                        value: "var(--ctp-frappe-base)"
+                    }
+                },
+            },
+        });
+    </script>
+    <div id="app">
+        <svg class="loading-progress">
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+    </div>
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script>
+        let labelCounter = 0;
+        let labels = [
+            'I\'m Software Engineer',
+            'I\'m Backend Developer',
+            'I\'m Desktop Developer',
+            'I\'m Internet of Things Entusiast',
+        ];
+        const animateCSS = (element, animation, prefix = 'animate__') =>
+            // We create a Promise and return it
+            new Promise((resolve, reject) => {
+                const animationName = `${prefix}${animation}`;
+                const node = document.querySelector(element);
+
+                node.classList.add(`${prefix}animated`, animationName);
+
+                // When the animation ends, we clean the classes and resolve the Promise
+                function handleAnimationEnd(event) {
+                    event.stopPropagation();
+                    node.classList.remove(`${prefix}animated`, animationName);
+                    resolve('Animation ended');
+                }
+
+                node.addEventListener('animationend', handleAnimationEnd, {once: true});
+            });
+
+        
+        function animate(){
+            let jobId = '#profile-job';
+            let job = document.querySelector(jobId);
+            
+            if(job === null || job === undefined) return;
+            if (labelCounter === labels.length) labelCounter = 0;
+            
+            job.innerText = labels[labelCounter];
+            animateCSS(jobId, 'flipInX').then(() => {
+                animateCSS(jobId, 'flipOutY').then(() => {
+                    labelCounter++;
+                    animate()
+                })
+            })
+        }
+    </script>
+</body>
+
+</html>
