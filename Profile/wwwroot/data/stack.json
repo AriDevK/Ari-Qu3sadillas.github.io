@@ -70,8 +70,8 @@
     "type": "Framework"
   },
   {
-    "name": "Angular",
-    "icon": "angularjs-plain",
+    "name": "Laravel",
+    "icon": "laravel-original",
     "type": "Framework"
   },
   {
@@ -90,6 +90,11 @@
     "type": "Framework"
   },
   {
+    "name": "NestJS",
+    "icon": "nestjs-plain",
+    "type": "Framework"
+  },
+  {
     "name": "React",
     "icon": "react-original",
     "type": "Framework"
@@ -97,6 +102,11 @@
   {
     "name": "React Router",
     "icon": "reactrouter-plain",
+    "type": "Framework"
+  },
+  {
+    "name": "Expo",
+    "icon": "expo-original",
     "type": "Framework"
   },
   {

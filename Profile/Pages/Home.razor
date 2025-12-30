@@ -7,14 +7,14 @@
 <MudGrid>
     <MudItem xs="12" md="8" Class="profile-data">
         <MudTooltip Text="that's me >:3">
-            <MudImage Src="images/ari4.jpeg" Alt="Ari avatar" Elevation="1" Class="profile-pic-header avatar rounded-circle" Width="300"/>
+            <MudImage Src="images/ari.png " Alt="Ari avatar" Elevation="1" Class="profile-pic-header avatar rounded-circle" Width="300"/>
         </MudTooltip>
 
         <MudText Typo="Typo.h3" Color="Color.Default">Ariadne Rangel</MudText>
         <p id="profile-job" class="d-inline-block" style="font-style: italic"></p>
         <br><br>
         <MudText Typo="Typo.body1" Class="profile-description">
-            Hello it's me Ari, I'm 22 yo software engineer focused at backend and desktop with interest on design patterns, clean architectures and learn new technologies.
+            Hello it's me Ari, I'm @age yo software engineer focused at backend and desktop with interest on design patterns, clean architectures and learn new technologies.
         </MudText>
         <br>
         <MudText Typo="Typo.body1" Class="profile-description">
@@ -23,7 +23,7 @@
     </MudItem>
     <MudItem xs="12" md="4" Style="text-align: center">
         <MudTooltip Text="that's me >:3" Class="profile-pic-footer">
-            <MudImage Src="images/ari4.jpeg" Alt="Ari avatar" Elevation="1" Class="profile-pic-footer avatar rounded-circle mx-auto" Width="300"/>
+            <MudImage Src="images/ari.png" Alt="Ari avatar" Elevation="1" Class="profile-pic-footer avatar rounded-circle mx-auto" Width="300"/>
         </MudTooltip>
     </MudItem>
 </MudGrid>
@@ -104,11 +104,17 @@
     [CascadingParameter(Name = "IsDarkMode")]
     public bool IsDark { get; set; }
 
+    private string? age;
     private Stack[]? _languages;
     private Stack[]? _frameworks;
 
     protected override async Task OnInitializedAsync()
     {
+        var birthDate = new DateTime(2001, 6, 30);
+        var today = DateTime.Today;
+        var calculatedAge = today.Year - birthDate.Year;
+        if (birthDate > today.AddYears(-calculatedAge)) calculatedAge--;
+        age = calculatedAge.ToString();
         var techStack = await Http.GetFromJsonAsync<Stack[]>("data/stack.json");
         if (techStack != null)
         {
